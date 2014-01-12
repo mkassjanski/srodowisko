@@ -1,0 +1,176 @@
+---
+title: main CSS
+---
+
+// Flat User Interface:
+// https://kuler.adobe.com/Flat-User-Interface-4-color-theme-2678386/edit/?copy=true&base=2&rule=Custom&selected=3&name=Copy%20of%20Flat%20User%20Interface%204&mode=rgb&rgbvalues=0.6352941176470588,0.054901960784313725,0.18823529411764706,0.9137254901960784,0.23529411764705882,0.30980392156862746,0.8705882352941177,0.8705882352941177,0.8705882352941177,0.8862745098039215,0.9490196078431372,1,0.17647058823529413,0.25882352941176473,0.3333333333333333
+
+@title-color: #A20E30;
+@title-hover-color: #2D4255;
+@subsection-color: #E93C4F;
+
+@code-background-color: #E2F2FF;
+
+// title: #A20E30 #E93C4F -- dark red, pink
+// math: #DEDEDE
+// code: #E2F2FF
+// slate blue: #2D4255
+
+// http://www.font-face-generator.com/
+
+@font-face {
+   font-family: Kavoon;
+   src: url('545928956-Kavoon-Regular.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+// Common
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+  background-color: #FFF;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+h1, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+h2 {
+  font-size: 120%;
+  color: @title-hover-color;
+}
+
+h3 {
+  color: @subsection-color;
+}
+
+h1 { margin-bottom: 1em; }
+p { margin: 1em 0; }
+
+a { color: #00a;
+  &:hover   { color: #000; }
+  &:visited { color: #a0a; }
+}
+
+// Home
+
+ul.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+  li {
+    line-height: 1.75em;
+  }
+  span {
+    color: #aaa;
+    font-family: Monaco, "Courier New", monospace;
+    font-size: 80%;
+  }
+}
+
+// Site
+
+.site {
+
+  text-align: justify;
+  width: 42em;
+  margin: 3em auto 2em;
+  line-height: 1.5em;
+
+  .header {
+    a {
+      font-weight: normal;
+      text-decoration: none;
+    }
+    h1.title {
+      display: inline-block;
+      margin-bottom: 1em;
+      font-family: Kavoon;
+      font-size: 160%;
+      a {
+        color: @title-color;
+        &:hover {
+          color: @title-hover-color;
+        }
+      }
+    }
+    a.extra {
+      color: #aaa;
+      margin-left: 1em;
+      font-family: Kavoon;
+      font-size: 160%;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+
+  .meta {
+    color: #aaa;
+  }
+
+  .footer {
+    font-size: 80%;
+    color: #666;
+    border-top: 4px solid #eee;
+    margin-top: 2em;
+    overflow: hidden;
+    .contact {
+      float: left;
+      margin-right: 3em;
+      a {
+        color: #8085C1;
+      }
+    }
+    .rss {
+      margin-top: 1.1em;
+      margin-right: -.2em;
+      float: right;
+    }
+    .rss img {
+      border: 0;
+    }
+  }
+
+}
+
+// Posts
+
+.post {
+
+  pre {
+    border: 1px solid #ddd;
+    background-color: @code-background-color;
+    padding: .75em .25em .75em 2em;
+    code {
+      border: none;
+    }
+    &.terminal {
+      border: 1px solid #000;
+      background-color: #333;
+      color: #FFF;
+      code {
+        background-color: #333;
+      }
+    }
+  }
+
+  ul, ol {
+    margin-left: 1.35em;
+  }
+
+  code {
+    border: none;
+    background-color: @code-background-color;
+    padding: 0 .25em;
+  }
+
+}
